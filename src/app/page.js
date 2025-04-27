@@ -4,9 +4,12 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center w-full h-full bg-blue-400 absolute">
-      <h1 className="fixed top-0 text-center leading-none tracking-tighter">
+      <h1 className="hidden md:block fixed top-0 text-center leading-none tracking-tighter text-[20px] md:text-[36px]">
         Euna's Baljak Roulette
       </h1>
+      <h2 className="fixed md:hidden top-0 text-center leading-none tracking-tighter text-[20px] md:text-[36px]">
+        Euna's Baljak Roulette
+      </h2>
       <Image
         src="/euna.jpeg"
         alt="euna"
