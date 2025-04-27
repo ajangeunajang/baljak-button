@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from 'react';
+import { useState } from "react";
 
 const baljakPhrases = [
   "심플하면서도 화려하게 부탁해",
@@ -14,9 +14,10 @@ const baljakPhrases = [
 ];
 
 export default function Home() {
-  const [bgColor, setBgColor] = useState('bg-blue-400');
-  const [pb, setPb] = useState('pb-0'); // For image bottom padding animation
+  const [bgColor, setBgColor] = useState("bg-blue-400");
+  const [pb, setPb] = useState("pb-0"); // For image bottom padding animation
   const [rotateDeg, setRotateDeg] = useState(0); // For image rotation
+  const [showRestart, setShowRestart] = useState(false);
 
   const getRandomPhrase = () => {
     const randomIndex = Math.floor(Math.random() * baljakPhrases.length);
@@ -25,21 +26,27 @@ export default function Home() {
 
   const handleButtonClick = () => {
     // Change background color first
-    setBgColor('bg-red-500');
+    setBgColor("bg-red-500");
 
-    // Trigger the animation on the image: move and rotate
-    setPb('pb-[10%]'); // Animate the padding-bottom
-    setRotateDeg(Math.floor(Math.random() * 360)); // Set a random rotation angle
+    setPb("pb-[50%]");
+    setRotateDeg(Math.floor(Math.random() * 360)); 
 
     // Use setTimeout to delay the alert slightly so the animations have time to render
     setTimeout(() => {
       alert(getRandomPhrase());
+      setShowRestart(true);
     }, 50); // Delay of 50ms, adjust as needed
   };
 
+  const handleRestart = () => {
+    // Refresh the page or reset the game state
+    window.location.reload();
+  };
+
   return (
-    <div className={`cursor-knife flex flex-col justify-center items-center w-full h-full absolute ${bgColor}`}>
-      
+    <div
+      className={`cursor-knife flex flex-col justify-center items-center w-full h-full absolute ${bgColor}`}
+    >
       <h1 className="hidden md:block fixed top-0 text-center leading-none tracking-tighter text-[20px] md:text-[36px]">
         Euna's Baljak Roulette
       </h1>
@@ -48,7 +55,7 @@ export default function Home() {
       </h2>
 
       <article className="flex flex-col justify-center items-center">
-      <Image
+        <Image
           src="/euna.jpeg"
           alt="euna"
           width={200}
@@ -412,7 +419,24 @@ export default function Home() {
             ></button>
           </div>
         </div>
+
+
+        {/* popup */}
+        {showRestart && (
+          <div className="w-full h-full bg-[0,0,0,0.4] fixed z-100 flex flex-col justify-center align-center backdrop-blur-sm">
+            <div className="text-[10vw] md:text-[4vw] text-center leading-normal tracking-tighter">
+              Congratulations, <br></br>you've found the Baljak button!
+            </div>
+            <div className="pt-6 flex justify-center items-center">
+              <button onClick={handleRestart} className="w-1/3 text-center">
+                다시 하기
+              </button>
+            </div>
+          </div>
+        )}
       </article>
+
+
       <footer className="w-full border-t border-black fixed bottom-0 p-2 md:p-4 text-center">
         <div>© 2025 은아의 발작룰렛. 모든 권리 보유.</div>
         <div>
