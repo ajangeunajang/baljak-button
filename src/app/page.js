@@ -26,13 +26,13 @@ export default function Home() {
       <h2 className="fixed md:hidden top-4 text-center leading-none tracking-tighter text-[20px] md:text-[36px]">
         Euna's Baljak Roulette
       </h2>
-      <article>
+      <article className="flex flex-col justify-center items-center">
         <Image
           src="/euna.jpeg"
           alt="euna"
           width={200}
           height={200}
-          className="w-[150px] md:w-[180px] mb-[-2%] md:mb-0"
+          className="w-[120px] md:w-[180px] mb-[-2%] md:mb-0"
           style={{
             mixBlendMode: "multiply",
             height: "auto",
@@ -391,7 +391,7 @@ export default function Home() {
           </div>
         </div>
       </article>
-      <footer className="w-full border-t border-black fixed bottom-0 p-4 text-center">
+      <footer className="w-full border-t border-black fixed bottom-0 p-2 md:p-4 text-center">
         <div>© 2025 은아의 발작룰렛. 모든 권리 보유.</div>
         <div>
           문의{" "}
