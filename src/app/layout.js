@@ -16,6 +16,16 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Hit the Baljak Button",
   description: "은아의 발작버튼 찾기",
+  openGraph: {
+    images: [
+      {
+        url: "/baljakog.png",
+        width: 1200,
+        height: 630,
+        alt: "Euna's Baljak Roulette",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
