@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { useState } from 'react';
 
 const baljakPhrases = [
   "심플하면서도 화려하게 부탁해",
@@ -13,29 +14,50 @@ const baljakPhrases = [
 ];
 
 export default function Home() {
+  const [bgColor, setBgColor] = useState('bg-blue-400');
+  const [pb, setPb] = useState('pb-0'); // For image bottom padding animation
+  const [rotateDeg, setRotateDeg] = useState(0); // For image rotation
+
   const getRandomPhrase = () => {
     const randomIndex = Math.floor(Math.random() * baljakPhrases.length);
     return baljakPhrases[randomIndex];
   };
 
+  const handleButtonClick = () => {
+    // Change background color first
+    setBgColor('bg-red-500');
+
+    // Trigger the animation on the image: move and rotate
+    setPb('pb-[10%]'); // Animate the padding-bottom
+    setRotateDeg(Math.floor(Math.random() * 360)); // Set a random rotation angle
+
+    // Use setTimeout to delay the alert slightly so the animations have time to render
+    setTimeout(() => {
+      alert(getRandomPhrase());
+    }, 50); // Delay of 50ms, adjust as needed
+  };
+
   return (
-    <div className="cursor-knife flex flex-col justify-center items-center w-full h-full bg-blue-400 absolute">
+    <div className={`cursor-knife flex flex-col justify-center items-center w-full h-full absolute ${bgColor}`}>
+      
       <h1 className="hidden md:block fixed top-0 text-center leading-none tracking-tighter text-[20px] md:text-[36px]">
         Euna's Baljak Roulette
       </h1>
-      <h2 className="fixed md:hidden top-4 text-center leading-none tracking-tighter text-[20px] md:text-[36px]">
+      <h2 className="fixed md:hidden top-2 text-center leading-none tracking-tighter text-[20px] md:text-[36px]">
         Euna's Baljak Roulette
       </h2>
+
       <article className="flex flex-col justify-center items-center">
-        <Image
+      <Image
           src="/euna.jpeg"
           alt="euna"
           width={200}
           height={200}
-          className="w-[120px] md:w-[180px] mb-[-2%] md:mb-0"
+          className={`w-[120px] md:w-[180px] mb-[-2%] md:mb-0 transition-all duration-500 ease-in-out ${pb}`} // Added transition for padding
           style={{
             mixBlendMode: "multiply",
             height: "auto",
+            transform: `rotate(${rotateDeg}deg)`, // Apply random rotation via inline style
           }}
         />
 
@@ -43,7 +65,7 @@ export default function Home() {
         <div className="z-10">
           <div className="flex justify-center items-center">
             <button
-              onClick={() => alert(getRandomPhrase())}
+              onClick={handleButtonClick}
               className="px-4 py-8 bg-white text-blue-500 rounded"
             ></button>
             <button
