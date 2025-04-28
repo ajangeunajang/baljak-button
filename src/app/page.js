@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-
 const baljakPhrases = [
   "심플하면서도 화려하게 부탁해",
   "괜찮긴 한데 뭔가 부족하네",
@@ -10,7 +9,7 @@ const baljakPhrases = [
   "내가 말한 건 이런 느낌 아니었는데",
   "내일까지 좀 퀄리티 있게 부탁할게",
   "이거 괜찮은데? 이런 식으로 몇 개만 더 뽑아봐",
-  "이거 나중에 조금만 수정해도 되지?",
+  "혹시 이렇게 하신 이유가 있을까요?",
   "이거 빨리 만들어줘. 어차피 간단한 거잖아.",
 ];
 
