@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import Barrel from "./components/barrel";
+import BarrelMb from "./components/barrelMobile";
 
 const baljakPhrases = [
   "심플하면서도 화려하게 부탁해",
@@ -105,8 +107,8 @@ export default function Home() {
           }}
         />
 
-        {/* barrel */}
-        <div className="z-10">
+        {/* barrel pc*/}
+        <div className="z-10 hidden md:block">
           <div className="flex justify-center items-center">
             <button
               onClick={getRandomButtonHandler()}
@@ -121,24 +123,7 @@ export default function Home() {
               className="px-4 py-8 bg-white text-blue-500 rounded"
             ></button>
           </div>
-          <div className="flex justify-center items-center">
-            <button
-              onClick={getRandomButtonHandler()}
-              className="px-4 py-8 bg-white text-blue-500 rounded"
-            ></button>
-            <button
-              onClick={getRandomButtonHandler()}
-              className="px-4 py-8 bg-white text-blue-500 rounded"
-            ></button>
-            <button
-              onClick={getRandomButtonHandler()}
-              className="px-4 py-8 bg-white text-blue-500 rounded"
-            ></button>
-            <button
-              onClick={getRandomButtonHandler()}
-              className="px-4 py-8 bg-white text-blue-500 rounded"
-            ></button>
-          </div>
+
           <div className="flex justify-center items-center">
             <button
               onClick={getRandomButtonHandler()}
@@ -192,11 +177,8 @@ export default function Home() {
               onClick={getRandomButtonHandler()}
               className="px-4 py-8 bg-white text-blue-500 rounded"
             ></button>
-            <button
-              onClick={getRandomButtonHandler()}
-              className="px-4 py-8 bg-white text-blue-500 rounded"
-            ></button>
           </div>
+
           <div className="flex justify-center items-center">
             <button
               onClick={getRandomButtonHandler()}
@@ -390,7 +372,12 @@ export default function Home() {
               onClick={getRandomButtonHandler()}
               className="px-4 py-8 bg-white text-blue-500 rounded"
             ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
           </div>
+          
           <div className="flex justify-center items-center">
             <button
               onClick={getRandomButtonHandler()}
@@ -440,7 +427,324 @@ export default function Home() {
               onClick={getRandomButtonHandler()}
               className="px-4 py-8 bg-white text-blue-500 rounded"
             ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
           </div>
+
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+        </div>
+
+        {/* barrel mobile */}
+        <div className="z-10 md:hidden">
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+          
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+          <div className="flex justify-center items-center">
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+            <button
+              onClick={getRandomButtonHandler()}
+              className="px-4 py-8 bg-white text-blue-500 rounded"
+            ></button>
+          </div>
+
           <div className="flex justify-center items-center">
             <button
               onClick={getRandomButtonHandler()}
