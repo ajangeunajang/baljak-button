@@ -1,9 +1,7 @@
 @import "tailwindcss";
 
-body {
-  cursor: url('/knife.png') 16 16, auto;
-}
 
 * {
+  cursor: none !important;
   font-family: 'Rock 3D', sans-serif;  /* 모든 텍스트에 폰트 적용 */
 }

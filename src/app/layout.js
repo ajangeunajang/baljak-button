@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${rock3D.variable} cursor-knife antialiased`}
+        className={`${rock3D.variable} antialiased`}
       >
         {children}
       </body>

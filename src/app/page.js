@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const baljakPhrases = [
@@ -25,9 +25,9 @@ const nicePhrases = [
   "사랑합니다",
   "멋져요",
   "대단해요",
-  "좋아",
+  "좋은데요",
   "최고예요",
-  "재밌어",
+  "재밌군요",
   "완벽해요",
   "감사합니다",
   "신나요",
@@ -45,6 +45,45 @@ export default function Home() {
   const [rotateDeg, setRotateDeg] = useState(0); // For image rotation
   const [showRestart, setShowRestart] = useState(false);
 
+  useEffect(() => {
+    // 커스텀 커서 이미지 생성
+    const cursorImg = document.createElement("img");
+    cursorImg.src = "/knife-cursor.png"; // 기본 커서 이미지
+    cursorImg.style.position = "fixed";
+    cursorImg.style.pointerEvents = "none";
+    cursorImg.style.zIndex = "9999";
+    cursorImg.style.width = "32px";
+    cursorImg.style.height = "32px";
+    cursorImg.style.transform = "translate(-50%, -50%)";
+    cursorImg.id = "custom-cursor";
+    document.body.appendChild(cursorImg);
+
+    // 마우스 움직임에 따라 이미지 위치 이동
+    const moveCursor = (e) => {
+      cursorImg.style.left = `${e.clientX}px`;
+      cursorImg.style.top = `${e.clientY}px`;
+    };
+    window.addEventListener("mousemove", moveCursor);
+
+    // 마우스 클릭 시 커서 이미지 변경
+    const handleMouseDown = () => {
+      cursorImg.src = "/collision-cursor.png"; // 클릭 시 이미지로 변경
+    };
+    const handleMouseUp = () => {
+      cursorImg.src = "/knife-cursor.png"; // 원래 이미지로 복구
+    };
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mouseup", handleMouseUp);
+
+    // 컴포넌트 언마운트 시 정리
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
+      document.body.removeChild(cursorImg);
+    };
+  }, []);
+
   const getRandomPhrase = () => {
     const randomIndex = Math.floor(Math.random() * baljakPhrases.length);
     return baljakPhrases[randomIndex];
@@ -54,8 +93,8 @@ export default function Home() {
     // Change background color first
     setBgColor("bg-red-500");
 
-    setPb("pb-[50%]");
     setRotateDeg(Math.floor(Math.random() * (360 - 30)) + 30); // 최소 30도
+    setPb("pb-[50%]");
 
     // Use setTimeout to delay the alert slightly so the animations have time to render
     setTimeout(() => {
