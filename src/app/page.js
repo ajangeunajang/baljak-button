@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import Barrel from "./components/barrel";
-import BarrelMb from "./components/barrelMobile";
+
 
 const baljakPhrases = [
   "심플하면서도 화려하게 부탁해",
@@ -18,7 +17,7 @@ const baljakPhrases = [
 const nicePhrases = [
   "좋네요",
   "굿",
-  "느낌 좋아요(느좋)",
+  "느낌 좋아요",
   "정말 좋네요",
   "아주 좋네요",
   "너무 좋네요",
@@ -62,7 +61,7 @@ export default function Home() {
     setTimeout(() => {
       alert(getRandomPhrase());
       setShowRestart(true);
-    }, 50); // Delay of 50ms, adjust as needed
+    }, 350); // Delay of 50ms, adjust as needed
   };
 
   const handleRestart = () => {
