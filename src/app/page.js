@@ -13,6 +13,31 @@ const baljakPhrases = [
   "이거 빨리 만들어줘. 어차피 간단한 거잖아.",
 ];
 
+const nicePhrases = [
+  "좋네요",
+  "굿",
+  "느낌 좋아요(느좋)",
+  "정말 좋네요",
+  "아주 좋네요",
+  "너무 좋네요",
+  "수정사항은 없습니다",
+  "사랑합니다",
+  "멋져요",
+  "대단해요",
+  "좋아",
+  "최고예요",
+  "재밌어",
+  "완벽해요",
+  "감사합니다",
+  "신나요",
+  "좋은데요",
+  "기대돼요",
+  "눈부셔요",
+  "잘하고 있어요",
+  "훌륭해요",
+  "아름다워요",
+];
+
 export default function Home() {
   const [bgColor, setBgColor] = useState("bg-blue-400");
   const [pb, setPb] = useState("pb-0"); // For image bottom padding animation
@@ -43,9 +68,16 @@ export default function Home() {
     window.location.reload();
   };
 
-  // 랜덤으로 rightButtonClick을 지정할 버튼을 선택
+  // 랜덤으로 rightButtonClick 지정
   const getRandomButtonHandler = () => {
-    return Math.random() < 0.1 ? rightButtonClick : () => alert(getRandomPhrase());
+    if (Math.random() < 0.1) {
+      return rightButtonClick;
+    } else {
+      return () => {
+        const randomIndex = Math.floor(Math.random() * nicePhrases.length);
+        alert(nicePhrases[randomIndex]);
+      };
+    }
   };
 
   return (
