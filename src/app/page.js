@@ -55,7 +55,7 @@ export default function Home() {
     setBgColor("bg-red-500");
 
     setPb("pb-[50%]");
-    setRotateDeg(Math.floor(Math.random() * 360)); 
+    setRotateDeg(Math.floor(Math.random() * (360 - 30)) + 30); // 최소 30도
 
     // Use setTimeout to delay the alert slightly so the animations have time to render
     setTimeout(() => {
